@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJAY GATTU - Portfolio</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -50,7 +51,32 @@
     </style>
 </head>
 <body>
+<button id="myButton">Click me</button>
+    <script>
+        // Avoid global variables
+        (function() {
+            // Use strict mode for better error handling
+            'use strict';
 
+            // Store references to DOM elements in local variables
+            var myButton = document.getElementById('myButton');
+
+            // Define the event handler function
+            function handleClick() {
+                console.log('Button clicked!');
+            }
+
+            // Attach the event listener
+            myButton.addEventListener('click', handleClick);
+
+            // Remove the event listener when it's no longer needed
+            // In this example, the listener is removed after 5 seconds
+            setTimeout(function() {
+                myButton.removeEventListener('click', handleClick);
+            }, 5000);
+        })();
+    </script>
+    
     <header>
         <h1>AJAY GATTU</h1>
         <p>DATA SCIENCE / MACHINE LEARNING</p>
